@@ -5,13 +5,16 @@ program TestePessoaServer;
 {$R *.res}
 
 uses
-  System.SysUtils;
+  System.SysUtils,
+  Horse;
 
 begin
-  try
-    { TODO -oUser -cConsole Main : Insert code here }
-  except
-    on E: Exception do
-      Writeln(E.ClassName, ': ', E.Message);
-  end;
+  THorse.Get('/ping',
+    procedure(Req: THorseRequest; Res: THorseResponse)
+    begin
+      Res.Send('{"status":"ok"}');
+    end);
+
+  Writeln('Servidor iniciado em http://localhost:9000');
+  THorse.Listen(9000);
 end.

@@ -1,0 +1,55 @@
+# Delphi / RAD Studio
+__history/
+*.identcache
+*.local
+*.dsk
+*.stat
+*.res
+*.dproj.local
+*.groupproj.local
+*.deployproj
+*.tvsconfig
+
+# Compilados / outputs
+Win32/
+Win64/
+Debug/
+Release/
+*.exe
+*.dll
+*.bpl
+*.dcp
+*.dcu
+*.map
+*.tds
+*.rsm
+*.hpp
+*.obj
+*.o
+
+# Boss / dependências
+# Mantém o boss.json versionado.
+# Se quiser que o avaliador restaure dependências com boss install, ignore modules/.
+modules/
+server/modules/
+client/modules/
+
+# Configuração local
+config.ini
+
+# Banco / dumps
+*.backup
+*.dump
+*.sql.tmp
+
+# Logs
+*.log
+
+# IDEs
+.vscode/
+.idea/
+
+# Temporários
+*.tmp
+*.bak
+*.old
