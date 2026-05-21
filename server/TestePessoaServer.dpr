@@ -7,6 +7,7 @@ program TestePessoaServer;
 uses
   System.SysUtils,
   Horse,
+  FireDAC.DApt,
   uConfigService in '..\core\infra\uConfigService.pas',
   uDMConnection in '..\core\infra\uDMConnection.pas' {dmConnection: TDataModule},
   uPessoaRepository in '..\core\repository\uPessoaRepository.pas',
@@ -14,7 +15,10 @@ uses
   uEnderecoIntegracao in '..\core\model\uEnderecoIntegracao.pas',
   uPessoa in '..\core\model\uPessoa.pas',
   uEnderecoRepository in '..\core\repository\uEnderecoRepository.pas',
-  uEnderecoIntegracaoRepository in '..\core\repository\uEnderecoIntegracaoRepository.pas';
+  uEnderecoIntegracaoRepository in '..\core\repository\uEnderecoIntegracaoRepository.pas',
+  uPessoaService in '..\core\service\uPessoaService.pas',
+  uPessoaDTO in '..\core\dto\uPessoaDTO.pas',
+  uPessoaRoutes in 'routes\uPessoaRoutes.pas';
 
 begin
   dmConnection := TdmConnection.Create(nil);
@@ -24,6 +28,8 @@ begin
       begin
         Res.Send('{"status":"ok"}');
       end);
+
+    RegistrarRotasPessoa;
 
     Writeln(
       Format(

@@ -109,7 +109,6 @@
         <DCCReference Include="..\core\infra\uConfigService.pas"/>
         <DCCReference Include="..\core\infra\uDMConnection.pas">
             <Form>dmConnection</Form>
-            <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <DCCReference Include="..\core\repository\uPessoaRepository.pas"/>
@@ -118,6 +117,9 @@
         <DCCReference Include="..\core\model\uPessoa.pas"/>
         <DCCReference Include="..\core\repository\uEnderecoRepository.pas"/>
         <DCCReference Include="..\core\repository\uEnderecoIntegracaoRepository.pas"/>
+        <DCCReference Include="..\core\service\uPessoaService.pas"/>
+        <DCCReference Include="..\core\dto\uPessoaDTO.pas"/>
+        <DCCReference Include="routes\uPessoaRoutes.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
