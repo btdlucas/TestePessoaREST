@@ -6,15 +6,28 @@ program TestePessoaServer;
 
 uses
   System.SysUtils,
-  Horse;
+  Horse,
+  uConfigService in '..\core\infra\uConfigService.pas',
+  uDMConnection in '..\core\infra\uDMConnection.pas' {dmConnection: TDataModule};
 
 begin
-  THorse.Get('/ping',
-   procedure(Req: THorseRequest; Res: THorseResponse)
-    begin
-      Res.Send('{"status":"ok"}');
-    end);
-  
-  Writeln('Servidor iniciado em http://localhost:9000');
-  THorse.Listen(9000);
-  end.
+  dmConnection := TdmConnection.Create(nil);
+  try
+    THorse.Get('/ping',
+      procedure(Req: THorseRequest; Res: THorseResponse)
+      begin
+        Res.Send('{"status":"ok"}');
+      end);
+
+    Writeln(
+      Format(
+        'Servidor iniciado em http://localhost:%d',
+        [TConfigService.GetServerPort]
+      )
+    );
+
+    THorse.Listen(TConfigService.GetServerPort);
+  finally
+    dmConnection.Free;
+  end;
+end.
