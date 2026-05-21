@@ -9,8 +9,12 @@ uses
   Horse,
   uConfigService in '..\core\infra\uConfigService.pas',
   uDMConnection in '..\core\infra\uDMConnection.pas' {dmConnection: TDataModule},
+  uPessoaRepository in '..\core\repository\uPessoaRepository.pas',
+  uEndereco in '..\core\model\uEndereco.pas',
   uEnderecoIntegracao in '..\core\model\uEnderecoIntegracao.pas',
-  uEndereco in '..\core\model\uEndereco.pas';
+  uPessoa in '..\core\model\uPessoa.pas',
+  uEnderecoRepository in '..\core\repository\uEnderecoRepository.pas',
+  uEnderecoIntegracaoRepository in '..\core\repository\uEnderecoIntegracaoRepository.pas';
 
 begin
   dmConnection := TdmConnection.Create(nil);

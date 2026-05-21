@@ -112,8 +112,12 @@
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
-        <DCCReference Include="..\core\model\uEnderecoIntegracao.pas"/>
+        <DCCReference Include="..\core\repository\uPessoaRepository.pas"/>
         <DCCReference Include="..\core\model\uEndereco.pas"/>
+        <DCCReference Include="..\core\model\uEnderecoIntegracao.pas"/>
+        <DCCReference Include="..\core\model\uPessoa.pas"/>
+        <DCCReference Include="..\core\repository\uEnderecoRepository.pas"/>
+        <DCCReference Include="..\core\repository\uEnderecoIntegracaoRepository.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
