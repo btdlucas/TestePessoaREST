@@ -10,7 +10,7 @@ __history/
 *.deployproj
 *.tvsconfig
 
-# Compilados / outputs
+# Compilados
 Win32/
 Win64/
 Debug/
@@ -27,14 +27,12 @@ Release/
 *.obj
 *.o
 
-# Boss / dependências
-# Mantém o boss.json versionado.
-# Se quiser que o avaliador restaure dependências com boss install, ignore modules/.
+# Boss
 modules/
 server/modules/
 client/modules/
 
-# Configuração local
+# Config local
 config.ini
 
 # Banco / dumps

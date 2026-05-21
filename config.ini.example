@@ -1,0 +1,11 @@
+[DATABASE]
+Server=localhost
+Port=5432
+Database=TestePessoaREST
+Username=SEU_USUARIO
+Password=SUA_SENHA
+DriverID=PG
+VendorLib=
+
+[SERVER]
+Port=9000
