@@ -8,7 +8,9 @@ uses
   System.SysUtils,
   Horse,
   uConfigService in '..\core\infra\uConfigService.pas',
-  uDMConnection in '..\core\infra\uDMConnection.pas' {dmConnection: TDataModule};
+  uDMConnection in '..\core\infra\uDMConnection.pas' {dmConnection: TDataModule},
+  uEnderecoIntegracao in '..\core\model\uEnderecoIntegracao.pas',
+  uEndereco in '..\core\model\uEndereco.pas';
 
 begin
   dmConnection := TdmConnection.Create(nil);
