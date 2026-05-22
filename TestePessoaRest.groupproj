@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{64277FBC-1882-4EBF-ABE8-03A9963961B6}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="server\TestePessoaServer.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="client\TestePessoaClient.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="TestePessoaServer">
+        <MSBuild Projects="server\TestePessoaServer.dproj"/>
+    </Target>
+    <Target Name="TestePessoaServer:Clean">
+        <MSBuild Projects="server\TestePessoaServer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TestePessoaServer:Make">
+        <MSBuild Projects="server\TestePessoaServer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TestePessoaClient">
+        <MSBuild Projects="client\TestePessoaClient.dproj"/>
+    </Target>
+    <Target Name="TestePessoaClient:Clean">
+        <MSBuild Projects="client\TestePessoaClient.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TestePessoaClient:Make">
+        <MSBuild Projects="client\TestePessoaClient.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="TestePessoaServer;TestePessoaClient"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="TestePessoaServer:Clean;TestePessoaClient:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="TestePessoaServer:Make;TestePessoaClient:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
