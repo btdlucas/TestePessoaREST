@@ -1,35 +1,35 @@
-# TestePessoaREST
+# Complemento - Etapas finais TestePessoaREST
 
-Teste técnico Delphi com arquitetura Cliente/Servidor, REST/JSON, PostgreSQL e FireDAC.
+Este pacote contém arquivos complementares para avançar o teste após o POST /pessoas já estar funcionando.
 
-## Tecnologias
-- Delphi
-- PostgreSQL
-- FireDAC
-- Horse
-- REST/JSON
+## Conteúdo
 
-## Estrutura
-- client/
-- server/
-- core/
-- database/
-- docs/
+- `core/service/uViaCepService.pas`
+- `core/service/uEnderecoIntegracaoService.pas`
+- `server/routes/uEnderecoIntegracaoRoutes.pas`
+- `server/routes/uPessoaLoteRoutes.pas`
+- `docs/exemplos_postman.md`
 
-## Banco
-Criar banco PostgreSQL UTF8 chamado:
+## Integração sugerida
 
-TestePessoaREST
+1. Copiar as units para as pastas equivalentes do projeto.
+2. Adicionar as units ao projeto Delphi Server.
+3. Registrar as rotas no `TestePessoaServer.dpr`:
 
-Executar:
+```delphi
+uses
+  ...
+  uEnderecoIntegracaoRoutes in 'routes\uEnderecoIntegracaoRoutes.pas',
+  uPessoaLoteRoutes in 'routes\uPessoaLoteRoutes.pas';
+```
 
-database/SCRIPT0001.sql
+Antes do `THorse.Listen`:
 
-## Servidor
-O servidor REST está em:
+```delphi
+RegistrarRotasPessoa;
+RegistrarRotasEnderecoIntegracao;
+RegistrarRotasPessoaLote;
+```
 
-server/
-
-Endpoint inicial:
-
-GET http://localhost:9000/ping
+4. Fazer Build.
+5. Testar endpoints no Postman.

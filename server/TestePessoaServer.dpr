@@ -16,9 +16,13 @@ uses
   uPessoa in '..\core\model\uPessoa.pas',
   uEnderecoRepository in '..\core\repository\uEnderecoRepository.pas',
   uEnderecoIntegracaoRepository in '..\core\repository\uEnderecoIntegracaoRepository.pas',
-  uPessoaService in '..\core\service\uPessoaService.pas',
   uPessoaDTO in '..\core\dto\uPessoaDTO.pas',
-  uPessoaRoutes in 'routes\uPessoaRoutes.pas';
+  uEnderecoIntegracaoRoutes in 'routes\uEnderecoIntegracaoRoutes.pas',
+  uPessoaLoteRoutes in 'routes\uPessoaLoteRoutes.pas',
+  uPessoaRoutes in 'routes\uPessoaRoutes.pas',
+  uEnderecoIntegracaoService in '..\core\service\uEnderecoIntegracaoService.pas',
+  uPessoaService in '..\core\service\uPessoaService.pas',
+  uViaCepService in '..\core\service\uViaCepService.pas';
 
 begin
   dmConnection := TdmConnection.Create(nil);
@@ -30,6 +34,8 @@ begin
       end);
 
     RegistrarRotasPessoa;
+    RegistrarRotasEnderecoIntegracao;
+    RegistrarRotasPessoaLote;
 
     Writeln(
       Format(

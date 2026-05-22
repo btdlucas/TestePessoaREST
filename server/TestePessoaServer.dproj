@@ -117,9 +117,13 @@
         <DCCReference Include="..\core\model\uPessoa.pas"/>
         <DCCReference Include="..\core\repository\uEnderecoRepository.pas"/>
         <DCCReference Include="..\core\repository\uEnderecoIntegracaoRepository.pas"/>
-        <DCCReference Include="..\core\service\uPessoaService.pas"/>
         <DCCReference Include="..\core\dto\uPessoaDTO.pas"/>
+        <DCCReference Include="routes\uEnderecoIntegracaoRoutes.pas"/>
+        <DCCReference Include="routes\uPessoaLoteRoutes.pas"/>
         <DCCReference Include="routes\uPessoaRoutes.pas"/>
+        <DCCReference Include="..\core\service\uEnderecoIntegracaoService.pas"/>
+        <DCCReference Include="..\core\service\uPessoaService.pas"/>
+        <DCCReference Include="..\core\service\uViaCepService.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
